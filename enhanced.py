@@ -4,19 +4,8 @@ import pygame
 import random
 import sys
 import time
-
+from utils import ASSETS_DIR, BACKGROUND_IMAGE, BOARD_IMAGE, CIRCLE_IMAGE, CROSS_IMAGE, CROSSHAIR_IMAGE, CELL_DELTA, CELL_ORIGIN, SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_SIZE            
 # game settings
-ASSETS_DIR = "assets"
-BACKGROUND_IMAGE = "background.jpg"
-BOARD_IMAGE = "board.png"
-CIRCLE_IMAGE = "circle.png"
-CROSS_IMAGE = "cross.png"
-CROSSHAIR_IMAGE = "crosshair 2.png"
-CELL_DELTA = 195
-CELL_ORIGIN = 30
-SCREEN_WIDTH = 1920
-SCREEN_HEIGHT = 1080
-SCREEN_SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
 
 class Crosshair(pygame.sprite.Sprite):
     def __init__(self, filename):

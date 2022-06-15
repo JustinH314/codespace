@@ -1,15 +1,16 @@
 import pygame
 import sys
-
-BG_COLOR = (36, 106, 115)
-HEIGHT = 600
-WIDTH = 600
-SCREEN_SIZE = (HEIGHT, WIDTH)
-GAME_TITLE = "Tic Tac Toe"
-STROKE_WIDTH = 5
-STROKE_COLOR = (255, 255, 255)
-SIGN_COLOR = (246, 174, 45)
-CROSS_MARGIN = 40
+import utils
+from utils import BG_COLOR, HEIGHT, WIDTH, SIZE, GAME_TITLE, STROKE_WIDTH, STROKE_COLOR, SIGN_COLOR, CROSS_MARGIN
+# BG_COLOR = (36, 106, 115)
+# HEIGHT = 600
+# WIDTH = 600
+# SIZE = (HEIGHT, WIDTH)
+# GAME_TITLE = "Tic Tac Toe"
+# STROKE_WIDTH = 5
+# STROKE_COLOR = (255, 255, 255)
+# SIGN_COLOR = (246, 174, 45)
+# CROSS_MARGIN = 40
 
 class Board:
     def __init__(self, n: int):
@@ -127,9 +128,9 @@ def is_board_filled():
 
 if "__main__" == __name__:
     pygame.init()
-    screen = pygame.display.set_mode(SCREEN_SIZE)
+    screen = pygame.display.set_mode(SIZE)
     pygame.display.set_caption(GAME_TITLE)
-    screen.fill(BG_COLOR)
+    screen.fill(utils.BG_COLOR)
     draw_line()
     board = create_board()
     player = 1
