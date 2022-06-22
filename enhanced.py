@@ -4,7 +4,7 @@ import pygame
 import random
 import sys
 import time
-from utils import ASSETS_DIR, BACKGROUND_IMAGE, BOARD_IMAGE, CIRCLE_IMAGE, CROSS_IMAGE, CROSSHAIR_IMAGE, CELL_DELTA, CELL_ORIGIN, SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_SIZE            
+from utils import *
 # game settings
 
 class Crosshair(pygame.sprite.Sprite):
@@ -30,14 +30,14 @@ class Board:
         self.surface = pygame.image.load(Path(ASSETS_DIR) / BOARD_IMAGE)
         self.surface = pygame.transform.scale(self.surface, (size, size))
         self.status = create_2D()
-    
+
     def is_valid_move(self, row, col):
         return self.status[row][col] == 0
 
     def move(self, row, col, player):
         self.status[row][col] = player
         return 2 if player == 1 else 1
-    
+
     def is_player_win(self, player) -> bool:
         win = False
         # check rows
@@ -49,7 +49,7 @@ class Board:
                     break
             if win:
                 return win
-        
+
         # check cols
         for i in range(3):
             win = True
@@ -67,7 +67,7 @@ class Board:
                 break
         if win:
             return win
-        
+
         win = True
         for e, i in enumerate(list(range(2, -1, -1))):
             if player != self.status[e][i]:
@@ -75,13 +75,13 @@ class Board:
                 break
         if win:
             return win
-    
-    def is_board_filled(self): 
+
+    def is_board_filled(self):
         for row in self.status:
             for sign in row:
                 if sign == 0:
                     return False
-        return True 
+        return True
 
 def init_player(players):
     return random.randint(*players)
@@ -93,12 +93,12 @@ def create_2D():
     x = []
     for i in range(3):
         row = []
-        
+
         for j in range(3):
             row.append(0)
-        
+
         x.append(row)
-    return x    
+    return x
 
 if "__main__" == __name__:
     running = True
@@ -130,7 +130,7 @@ if "__main__" == __name__:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-        
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos_x, pos_y = event.pos
                 print(f"pos_x {pos_x}, pos_y {pos_y}")
