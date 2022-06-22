@@ -1,3 +1,27 @@
+__all__ = [
+    "BG_COLOR",
+    "HEIGHT",
+    "WIDTH",
+    "SIZE",
+    "GAME_TITLE",
+    "STROKE_WIDTH",
+    "STROKE_COLOR",
+    "SIGN_COLOR",
+    "CROSS_MARGIN",
+    "ASSETS_DIR",
+    "BACKGROUND_IMAGE",
+    "BOARD_IMAGE",
+    "CIRCLE_IMAGE",
+    "CROSS_IMAGE",
+    "CROSSHAIR_IMAGE",
+    "CELL_DELTA",
+    "CELL_ORIGIN",
+    "SCREEN_WIDTH",
+    "SCREEN_HEIGHT",
+    "SCREEN_SIZE",
+
+]
+
 # base
 BG_COLOR = (36, 106, 115)
 HEIGHT = 600
